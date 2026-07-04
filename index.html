@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Obsidian — Car Detailing a Domicilio · Barcelona</title>
+<meta name="description" content="Detailing profesional a domicilio en Barcelona. Sin desplazamientos, sin esperas, productos de élite. Reserva en 2 minutos." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #1a1a1a;
+    --surface: #111111;
+    --surface2: #181818;
+    --border: #403f3f;
+    --border2: #ffffff;
+    --cream: #f0ede8;
+    --cream-dim: #a09a92;
+    --muted: #ffffff;
+    --muted2: #ffffff;
+    --serif: 'EB Garamond', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  .site-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    border-left: 0.5px solid var(--border);
+    border-right: 0.5px solid var(--border);
+    min-height: 100vh;
+  }
+
+  body {
+    background: var(--black);
+    color: var(--cream);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* NAV */
+  nav {
+    position: relative;
+    top: 0;
+    z-index: 100;
+    background: var(--black);
+    border-bottom: 0.5px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 48px;
+    height: 60px;
+  }
+
+  .nav-logo {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    color: var(--cream);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .nav-links a {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--cream); }
+
+  .nav-cta {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    background: var(--cream);
+    color: var(--black);
+    padding: 9px 20px;
+    border-radius: 1px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .nav-cta:hover { opacity: 0.88; }
+
+  /* HERO */
+  .hero-wrapper {
+    position: relative;
+    border-bottom: 0.5px solid var(--border);
+    background-image: url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center 30%;
+  }
+
+  .hero-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(8,8,8,0.40);
+    pointer-events: none;
+  }
+
+  .hero {
+    position: relative;
+    z-index: 1;
+    padding: 100px 48px 80px;
+    border-bottom: 0.5px solid var(--border);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 0.5px;
+    background: var(--muted2);
+  }
+
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(44px, 6vw, 72px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+    margin-bottom: 28px;
+    max-width: 640px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--cream-dim);
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 400px;
+    line-height: 1.75;
+    margin-bottom: 40px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 56px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    background: var(--cream);
+    color: var(--black);
+    padding: 13px 28px;
+    border-radius: 1px;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.88; }
+
+  .btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  background: #1DAA56;
+  color: #ffffff;
+  padding: 13px 28px;
+  border-radius: 1px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-whatsapp:hover { opacity: 0.88; }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .btn-ghost:hover { color: var(--cream); }
+
+  .btn-ghost svg { width: 16px; height: 16px; }
+
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    padding-top: 40px;
+    border-top: 0.5px solid var(--border);
+  }
+
+  .stat-n {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-l {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+  }
+
+  /* VIDEO BLOCK */
+  .video-block {
+    height: 320px;
+    background: var(--surface);
+    border-bottom: 0.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .video-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .play-ring {
+    width: 60px;
+    height: 60px;
+    border: 0.5px solid var(--border2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s;
+  }
+
+  .video-block:hover .play-ring { border-color: var(--muted); }
+
+  .play-ring svg { width: 18px; height: 18px; fill: var(--cream); margin-left: 3px; }
+
+  .video-label {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+  }
+
+  .video-corner {
+    position: absolute;
+    bottom: 20px;
+    left: 48px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--muted2);
+  }
+
+  /* SECTIONS */
+  .section {
+    padding: 72px 48px;
+    border-bottom: 0.5px solid var(--border);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-full {
+    padding: 72px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .section-full .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--muted2);
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 0.5px;
+    background: var(--muted2);
+  }
+
+  /* PROPS */
+  .props-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 0.5px solid var(--border);
+  }
+
+  .prop {
+    padding: 36px 32px;
+    border-right: 0.5px solid var(--border);
+  }
+
+  .prop:last-child { border-right: none; }
+
+  .prop-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 20px;
+    color: var(--muted);
+  }
+
+  .prop-icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.2; }
+
+  .prop-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 10px;
+    letter-spacing: 0.02em;
+  }
+
+  .prop-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  /* SERVICES */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 0.5px solid var(--border);
+  }
+
+  .svc {
+    padding: 36px 32px;
+    border-right: 0.5px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .svc:last-child { border-right: none; }
+  .svc.featured { background: var(--surface); }
+
+  .svc-badge {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    background: var(--cream);
+    color: var(--black);
+    padding: 3px 8px;
+    border-radius: 1px;
+    margin-bottom: 20px;
+    align-self: flex-start;
+  }
+
+  .svc-spacer { height: 25px; }
+
+  .svc-name {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  .svc-price {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .svc-price-label {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+
+  .svc-divider {
+    height: 0.5px;
+    background: var(--border);
+    margin-bottom: 24px;
+  }
+
+  .svc-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .svc-item {
+    font-size: 11px;
+    color: var(--muted);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+
+  .svc-item::before {
+    content: '–';
+    color: var(--muted2);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .svc-cta {
+    margin-top: 32px;
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--cream);
+    border-bottom: 0.5px solid var(--muted2);
+    padding-bottom: 2px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    align-self: flex-start;
+  }
+
+  .svc-cta:hover { border-color: var(--cream); }
+
+  /* BEFORE AFTER */
+  .ba-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 0;
+  }
+
+  .ba-card {
+    height: 200px;
+    background: var(--surface);
+    display: flex;
+    align-items: flex-end;
+    padding: 20px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ba-card.after { background: var(--surface2); }
+
+  .ba-label {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--muted2);
+  }
+
+  .ba-card.after .ba-label { color: var(--muted); }
+
+  /* STEPS */
+  .steps { display: flex; flex-direction: column; }
+
+  .step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 0.5px solid var(--border);
+    align-items: start;
+  }
+
+  .step:last-child { border-bottom: none; }
+
+  .step-num {
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--muted2);
+    padding-top: 3px;
+    font-style: italic;
+  }
+
+  .step-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 6px;
+  }
+
+  .step-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ZONES */
+  .zones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 0;
+  }
+
+  .zone {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    border: 0.5px solid var(--border);
+    padding: 8px 16px;
+    border-radius: 1px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .zone:hover { border-color: var(--muted2); color: var(--cream); }
+
+  /* CTA BLOCK */
+  .cta-block {
+    padding: 96px 48px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .cta-title {
+    font-family: var(--serif);
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+    color: var(--cream);
+    max-width: 1000px;
+    line-height: 1.15;
+  }
+
+  .cta-title em { font-style: italic; color: var(--cream-dim); }
+
+  .cta-form {
+    display: flex;
+    gap: 0;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .cta-input {
+    flex: 1;
+    background: var(--surface);
+    border: 0.5px solid var(--border2);
+    border-right: none;
+    padding: 14px 18px;
+    font-size: 12px;
+    font-family: var(--sans);
+    font-weight: 300;
+    color: var(--cream);
+    border-radius: 0;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .cta-input::placeholder { color: var(--muted2); }
+  .cta-input:focus { border-color: var(--muted); }
+
+  .cta-submit {
+    background: var(--cream);
+    color: var(--black);
+    border: none;
+    padding: 14px 24px;
+    font-size: 11px;
+    font-family: var(--sans);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    border-radius: 0;
+    transition: opacity 0.2s;
+  }
+
+  .cta-submit:hover { opacity: 0.88; }
+
+  .cta-note {
+    font-size: 11px;
+    color: var(--muted2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .cta-note svg { width: 13px; height: 13px; stroke: var(--muted2); fill: none; stroke-width: 1.5; }
+
+  /* FOOTER */
+  footer {
+    padding: 28px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--muted2);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .footer-links a {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--muted2);
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--muted); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hero, .section, .cta-block { padding-left: 24px; padding-right: 24px; }
+    .section-full .section-inner { padding: 0 24px; }
+    .hero-title { font-size: 38px; }
+    .hero-stats { gap: 28px; }
+    .props-grid, .services-grid { grid-template-columns: 1fr; }
+    .prop { border-right: none; border-bottom: 0.5px solid var(--border); }
+    .svc { border-right: none; border-bottom: 0.5px solid var(--border); }
+    .ba-grid { grid-template-columns: 1fr; }
+    footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="site-wrapper">
+<nav>
+  <span class="nav-logo">OBSIDIAN</span>
+  <ul class="nav-links">
+    <li><a href="#servicios">La Colección</a></li>
+    <li><a href="#como-funciona">El método Obsidian</a></li>
+    <li><a href="#cobertura">Dónde operamos</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <a href="https://instagram.com/obsidiandetail" target="_blank" style="display:inline-flex;align-items:center;" aria-label="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f0ede8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#f0ede8"/></svg>
+    </a>
+    <a href="#reservar" class="nav-cta">Reservar</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero-wrapper">
+<div class="hero">
+  <p class="hero-eyebrow">Servicio privado de detailing en las mejores urbanizaciones de España</p>
+  <h1 class="hero-title">Invisible.<br/>Impecable.<br/><em>Obsidian.</em></h1>
+  <p class="hero-sub">No todo el mundo sabe que existimos.<br/> Llegamos, trabajamos y desaparecemos.<br/> Solo queda el resultado.</p>
+  <div class="hero-actions">
+    <a href="#reservar" class="btn-primary">
+      Reservar ahora
+      <svg viewBox="0 0 16 16" fill="currentColor" style="width:12px;height:12px;"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+    </a>
+    <a href="https://wa.me/34600000000" class="btn-whatsapp">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      WhatsApp directo
+    </a>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <p class="stat-n">100%</p>
+      <p class="stat-l">Discreción garantizada</p>
+    </div>
+    <div>
+      <p class="stat-n">8 años</p>
+      <p class="stat-l">Experiencia en detailing</p>
+    </div>
+    <div>
+      <p class="stat-n">+500</p>
+      <p class="stat-l">Servicios completados</p>
+    </div>
+    <div>
+      <p class="stat-n">1h</p>
+      <p class="stat-l">Tiempo de respuesta</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- VIDEO -->
+<div class="video-block">
+  <div class="video-overlay">
+    <div class="play-ring">
+      <svg viewBox="0 0 18 18"><polygon points="6,3 15,9 6,15" fill="#f0ede8"/></svg>
+    </div>
+    <span class="video-label">Obsidian en acción · 60 segundos</span>
+  </div>
+  <span class="video-corner">Barcelona · 2025</span>
+</div>
+
+<!-- POR QUÉ OBSIDIAN -->
+<div class="section-full">
+  <div class="section-inner">
+    <p class="section-label">Por qué Obsidian</p>
+    <div class="props-grid">
+      <div class="prop">
+        <div class="prop-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <p class="prop-title">En tu garaje</p>
+        <p class="prop-desc">Llegamos a tu urbanización o parking. Tú no mueves el coche. Nosotros nos ocupamos de todo.</p>
+      </div>
+      <div class="prop">
+        <div class="prop-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></svg>
+        </div>
+        <p class="prop-title">Productos de élite</p>
+        <p class="prop-desc">Koch Chemie, Gyeon y Gtechniq. Los mismos productos que usan los talleres oficiales de Porsche y Ferrari.</p>
+      </div>
+      <div class="prop">
+        <div class="prop-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <p class="prop-title">Sin esperas</p>
+        <p class="prop-desc">Reservas en 2 minutos. Confirmación inmediata. Puntualidad garantizada en cada visita.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<div class="section-full" id="servicios">
+  <div class="section-inner">
+    <p class="section-label">Servicios</p>
+    <div class="services-grid">
+      <div class="svc">
+        <div class="svc-spacer"></div>
+        <p class="svc-name">Exterior</p>
+        <p class="svc-price">80€</p>
+        <p class="svc-price-label">desde / sesión</p>
+        <div class="svc-divider"></div>
+        <div class="svc-items">
+          <span class="svc-item">Lavado a mano con espuma activa</span>
+          <span class="svc-item">Secado con microfibra premium</span>
+          <span class="svc-item">Llantas y arcos de rueda</span>
+          <span class="svc-item">Cristales y espejos</span>
+        </div>
+        <a href="#reservar" class="svc-cta">Reservar →</a>
+      </div>
+      <div class="svc featured">
+        <span class="svc-badge">Más popular</span>
+        <p class="svc-name">Completo</p>
+        <p class="svc-price">150€</p>
+        <p class="svc-price-label">desde / sesión</p>
+        <div class="svc-divider"></div>
+        <div class="svc-items">
+          <span class="svc-item">Todo lo del servicio Exterior</span>
+          <span class="svc-item">Interior aspirado y saneado</span>
+          <span class="svc-item">Plásticos y cueros tratados</span>
+          <span class="svc-item">Aromatización premium</span>
+        </div>
+        <a href="#reservar" class="svc-cta">Reservar →</a>
+      </div>
+      <div class="svc">
+        <div class="svc-spacer"></div>
+        <p class="svc-name">Detailing total</p>
+        <p class="svc-price">500€</p>
+        <p class="svc-price-label">desde / sesión</p>
+        <div class="svc-divider"></div>
+        <div class="svc-items">
+          <span class="svc-item">Corrección de pintura (1 o 2 pasos)</span>
+          <span class="svc-item">Ceramic coating Gyeon</span>
+          <span class="svc-item">Protección 12 a 24 meses</span>
+          <span class="svc-item">Certificado de tratamiento</span>
+        </div>
+        <a href="#reservar" class="svc-cta">Reservar →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ANTES / DESPUÉS -->
+<div class="section-full">
+  <div class="section-inner">
+    <p class="section-label">La transformación</p>
+  </div>
+  <div class="ba-grid" style="max-width:1100px;margin:0 auto;padding:0 48px;">
+    <div class="ba-card"><span class="ba-label">Antes</span></div>
+    <div class="ba-card after"><span class="ba-label">Después · Obsidian</span></div>
+    <div class="ba-card"><span class="ba-label">Antes</span></div>
+    <div class="ba-card after"><span class="ba-label">Después · Obsidian</span></div>
+  </div>
+</div>
+
+<!-- CÓMO FUNCIONA -->
+<div class="section" id="como-funciona">
+  <p class="section-label">Cómo funciona</p>
+  <div class="steps">
+    <div class="step">
+      <span class="step-num">01</span>
+      <div>
+        <p class="step-title">Reserva en 2 minutos</p>
+        <p class="step-desc">Por WhatsApp o mediante el formulario. Te confirmamos disponibilidad al momento y acordamos hora y lugar.</p>
+      </div>
+    </div>
+    <div class="step">
+      <span class="step-num">02</span>
+      <div>
+        <p class="step-title">Llegamos a ti</p>
+        <p class="step-desc">Nuestro técnico aparece en tu garaje o parking en el horario acordado, con todo el equipo necesario.</p>
+      </div>
+    </div>
+    <div class="step">
+      <span class="step-num">03</span>
+      <div>
+        <p class="step-title">Tu coche, impecable</p>
+        <p class="step-desc">En 2 a 4 horas según el servicio. Recogemos todo, no dejamos rastro. Solo el resultado.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COBERTURA -->
+<div class="section" id="cobertura">
+  <p class="section-label">Dónde operamos</p>
+
+  <p style="font-size:10px;letter-spacing:0.18em;color:var(--muted2);margin-bottom:12px;">BARCELONA Y ALREDEDORES</p>
+  <div class="zones" style="margin-bottom:32px;">
+    <span class="zone">Pedralbes</span>
+    <span class="zone">La Bonanova</span>
+    <span class="zone">Sarrià</span>
+    <span class="zone">Sant Gervasi</span>
+    <span class="zone">La Floresta</span>
+    <span class="zone">Valldoreix</span>
+    <span class="zone">Sant Andreu de Llavaneres</span>
+    <span class="zone">Sitges</span>
+    <span class="zone">Castelldefels</span>
+    <span class="zone">Gavà Mar</span>
+  </div>
+
+  <p style="font-size:10px;letter-spacing:0.18em;color:var(--muted2);margin-bottom:12px;">MADRID</p>
+  <div class="zones" style="margin-bottom:32px;">
+    <span class="zone">La Moraleja</span>
+    <span class="zone">Puerta de Hierro</span>
+    <span class="zone">La Finca</span>
+    <span class="zone">Somosaguas</span>
+    <span class="zone">Valdemarín</span>
+    <span class="zone">Aravaca</span>
+    <span class="zone">Las Matas</span>
+  </div>
+
+  <p style="font-size:10px;letter-spacing:0.18em;color:var(--muted2);margin-bottom:12px;">MARBELLA Y COSTA DEL SOL</p>
+  <div class="zones" style="margin-bottom:32px;">
+    <span class="zone">La Zagaleta</span>
+    <span class="zone">Sierra Blanca</span>
+    <span class="zone">Guadalmina</span>
+    <span class="zone">Los Monteros</span>
+    <span class="zone">El Madroñal</span>
+    <span class="zone">Sotogrande</span>
+    <span class="zone">Los Flamingos</span>
+  </div>
+
+  <p style="font-size:10px;letter-spacing:0.18em;color:var(--muted2);margin-bottom:12px;">IBIZA</p>
+  <div class="zones" style="margin-bottom:32px;">
+    <span class="zone">Cap Martinet</span>
+    <span class="zone">Roca Llisa</span>
+    <span class="zone">Es Cubells</span>
+    <span class="zone">Cala Conta</span>
+    <span class="zone">Cala Jondal</span>
+  </div>
+
+  <p style="font-size:10px;letter-spacing:0.18em;color:var(--muted2);margin-bottom:12px;">MALLORCA</p>
+  <div class="zones" style="margin-bottom:32px;">
+    <span class="zone">Son Vida</span>
+    <span class="zone">Bendinat</span>
+    <span class="zone">Puerto Portals</span>
+    <span class="zone">Costa d'en Blanes</span>
+    <span class="zone">Portixol</span>
+  </div>
+
+  <p style="font-size:10px;letter-spacing:0.18em;color:var(--muted2);margin-bottom:12px;">VALENCIA</p>
+  <div class="zones">
+    <span class="zone">La Cañada</span>
+    <span class="zone">Rocafort</span>
+    <span class="zone">Godella</span>
+    <span class="zone">Bétera</span>
+  </div>
+
+</div>
+
+<!-- CTA FINAL -->
+<div class="cta-block" id="reservar" style="background-image: url('cta-bg1.jpg'); background-size: cover; background-position: center; position: relative;">
+  <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(8,8,8,0.85) 40%, rgba(8,8,8,0.75) 100%);"></div>
+  <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:28px;width:100%;">
+  <h2 class="cta-title">Hay estándares que no se negocian.</h2>
+  <form class="cta-form" onsubmit="handleSubmit(event)">
+    <input class="cta-input" type="tel" placeholder="Déjanos tu contacto y te llamamos" id="phone" />
+    <button type="submit" class="cta-submit">Solicitar cita</button>
+  </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer style="display:flex;justify-content:space-between;align-items:center;padding:28px 48px;">
+  
+  <div style="display:flex;align-items:center;gap:20px;">
+    <a href="https://instagram.com/obsidiandetail" target="_blank" aria-label="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="f0ede8" stroke="#f0ede8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#383838"/></svg>
+    </a>
+    <a href="https://wa.me/34600000000" target="_blank" aria-label="WhatsApp">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="f0ede8" stroke="#f0ede8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    </a>
+  </div>
+
+  <div style="display:flex;gap:24px;">
+    <a href="#" style="font-size:10px;letter-spacing:0.1em;color:var(--muted2);">Aviso legal</a>
+    <a href="#" style="font-size:10px;letter-spacing:0.1em;color:var(--muted2);">Privacidad</a>
+  </div>
+
+  <p style="font-size:10px;letter-spacing:0.1em;color:var(--muted2);">© 2026 Obsidian Detail S.L.</p>
+
+</footer>
+</div>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    var phone = document.getElementById('phone').value.trim();
+    if (!phone) return;
+    var msg = encodeURIComponent('Hola, me interesa reservar un servicio de detailing. Mi número es ' + phone);
+    window.open('https://wa.me/34600000000?text=' + msg, '_blank');
+  }
+</script>
+
+</body>
+</html>
