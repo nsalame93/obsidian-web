@@ -972,13 +972,23 @@
 </div>
 
 <script>
-  function handleSubmit(e) {
-    e.preventDefault();
-    var phone = document.getElementById('phone').value.trim();
-    if (!phone) return;
-    var msg = encodeURIComponent('Hola, me interesa reservar un servicio de detailing. Mi número es ' + phone);
-    window.open('https://wa.me/34685313303?text=' + msg, '_blank');
-  }
+async function handleSubmit(e) {
+  e.preventDefault();
+  var phone = document.getElementById('phone').value.trim();
+  if (!phone) return;
+
+  await fetch('https://hook.eu1.make.com/sxkjqj7nxqameyqpkj6igrvuul7j9qxj', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      telefono: phone,
+      fecha: new Date().toLocaleString('es-ES')
+    })
+  });
+
+  document.getElementById('phone').value = '';
+  document.querySelector('.cta-form').innerHTML = '<p style="font-size:13px;color:#f0ede8;letter-spacing:0.08em;">Perfecto. En menos de 1h nos ponemos en contacto contigo.</p>';
+}
 </script>
 
 </body>
